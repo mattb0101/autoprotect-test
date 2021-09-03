@@ -23,12 +23,9 @@ part of your solution.
 
 ## User Story
 
-**As a** student of the organisation
-
-**I want** to refer to a multiplication table
-
+**As a** student of the organisation  
+**I want** to refer to a multiplication table  
 **So that** I can understand what the square values of each number is
-
 
 **Background** A square value is the number you get when you multiply two
 numbers that are the same together. For example the square value of 4 is 16 (4 x
@@ -46,10 +43,8 @@ column integer together.
 
 ## User Story
 
-**As a** student of the organisation
-
-**I want** to refer to a prime numbers matrix
-
+**As a** student of the organisation  
+**I want** to refer to a prime numbers matrix  
 **So that** I can understand what the prime numbers are
 
 **Background** A prime number is a number that is only divisble by one and
