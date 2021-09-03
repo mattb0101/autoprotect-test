@@ -23,8 +23,8 @@ part of your solution.
 
 ## User Story
 
-**As a** student
-**I want** to know what the square values up to 12 are
+**As a** student  
+**I want** to know what the square values up to 12 are  
 **So that** I can revise for my maths exam
 
 **Background** A square value is the number you get when you multiply two
@@ -43,8 +43,8 @@ column integer together.
 
 ## User Story
 
-**As a** student
-**I want** to know what the prime numbers up to 1000 are
+**As a** student  
+**I want** to know what the prime numbers up to 1000 are  
 **So that** I can revise for my maths exam
 
 **Background** A prime number is a number that is only divisble by one and
