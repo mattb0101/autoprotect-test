@@ -1,3 +1,24 @@
+<?php
+
+    $limit = 100;
+
+    if(isset($_POST['limit'])) {
+        if(is_numeric($_POST['limit']) && $_POST['limit'] > 0 && $_POST['limit'] <= 1000){
+            $limit = $_POST['limit'];
+        }
+    }
+
+    function isPrime($i)
+    {
+        for($n = 2; $n < $i; $n++){
+            if ($i % $n == 0){
+                return 0;
+            }
+        }
+        return 1;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +32,48 @@
 </head>
 <body>
 
+<h1>Maths support for students!</h1>
+
+<a href="squares.php">Square values</a>
+
+<a href="primes.php">Prime values</a>
+
+<div class="table-responsive w-50">
+        <table class="table table-bordered caption-top">
+            <caption>Prime Numbers up to 1000</caption>
+
+        <?php 
+
+            for($i = 1; $i <= $limit; $i++) {
+                if (($i -1) % 10 == 0)
+                    echo '<tr>';
+
+                    $j = isPrime($i);
+                    if ($j == 0)
+                    echo '<td>' . $i. '<td>';
+                    else
+                    echo '<td class="fw-bold">' . $i. '</td>';            
+
+                if ($i % 10 == 0)
+                    echo '</tr>';
+            }
+
+        ?>
+    
+    <div>
+        <form action="primes.php" method="POST">
+        Update limit: <input type="text" name="limit">
+        <input type="submit">
+        </form>
+    </div>
     
 
     <!-- Boostrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $("td:empty").remove();
+    </script>
 </body>
 </html>

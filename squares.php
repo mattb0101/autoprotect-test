@@ -29,6 +29,12 @@
 </head>
 <body>
 
+<h1>Maths support for students!</h1>
+
+<a href="squares.php">Square values</a>
+
+<a href="primes.php">Prime values</a>
+
 <div class="table-responsive w-50">
         <table class="table caption-top">
             <caption>Squares up to 12</caption>
@@ -51,7 +57,7 @@
     </div>
 
     <div>
-        <form action="index.php" method="POST">
+        <form action="squares.php" method="POST">
         Update Row: <input type="text" name="row">
         Update Columns: <input type="text" name="col">
         <input type="submit">
