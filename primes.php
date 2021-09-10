@@ -3,7 +3,7 @@
     $limit = 100;
 
     if(isset($_POST['limit'])) {
-        if(is_numeric($_POST['limit']) && $_POST['limit'] > 0 && $_POST['limit'] <= 1000){
+        if(is_numeric($_POST['limit']) && $_POST['limit'] > 0){
             $limit = $_POST['limit'];
         }
     }
@@ -25,47 +25,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Protect Code Test</title>
+    <title>Prime Values up to 1000</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 
-<h1>Maths support for students!</h1>
+<div class="container-fluid d-flex justify-content-center">
+    <h1>Maths support for students!</h1>
+</div>
+<div class="container-fluid d-flex justify-content-center">
+    <a class="btn btn-light btn-lg p-3 m-2" href="squares.php">Square values</a>
+    <a class="btn btn-light btn-lg p-3 m-2" href="primes.php">Prime values</a>
+</div>   
 
-<a href="squares.php">Square values</a>
-
-<a href="primes.php">Prime values</a>
-
-<div class="table-responsive w-50">
-        <table class="table table-bordered caption-top">
-            <caption>Prime Numbers up to 1000</caption>
-
-        <?php 
-
-            for($i = 1; $i <= $limit; $i++) {
-                if (($i -1) % 10 == 0)
-                    echo '<tr>';
-
-                    $j = isPrime($i);
-                    if ($j == 0)
-                    echo '<td>' . $i. '<td>';
-                    else
-                    echo '<td class="fw-bold">' . $i. '</td>';            
-
-                if ($i % 10 == 0)
-                    echo '</tr>';
-            }
-
-        ?>
-    
+<div class="container-fluid d-flex justify-content-center">
     <div>
-        <form action="primes.php" method="POST">
-        Update limit: <input type="text" name="limit">
-        <input type="submit">
-        </form>
+        <h2>Prime Numbers</h2>
+        <div>
+            <form action="primes.php" method="POST">
+            Update limit (maximum 1000): <input type="number" name="limit" max="1000">
+            <input type="submit">
+            </form>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered caption-top text-center">
+                <caption>Prime Numbers up to 1000</caption>
+
+                <?php 
+
+                    for($i = 1; $i <= $limit; $i++) {
+                        if (($i -1) % 10 == 0)
+                            echo '<tr>';
+
+                            $j = isPrime($i);
+                            if ($j == 0)
+                            echo '<td>' . $i. '<td>';
+                            else
+                            echo '<td class="fw-bold">' . $i. '</td>';            
+
+                        if ($i % 10 == 0)
+                            echo '</tr>';
+                    }
+
+                ?>
+        </div>
     </div>
+</div>
     
 
     <!-- Boostrap JS -->
