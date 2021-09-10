@@ -3,6 +3,17 @@
     $col = 12;
     $row = 12;
 
+    if(isset($_POST['row'])) {
+        if(is_numeric($_POST['row']) && $_POST['row'] > 0){
+            $row = $_POST['row'];
+        }
+    }
+
+    if(isset($_POST['col'])) {
+        if(is_numeric($_POST['col']) && $_POST['col'] > 0){
+            $col = $_POST['col'];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +34,6 @@
             <caption>Squares up to 12</caption>
             
             <?php  
-            
                 for($i = 1; $i < $row +1; $i++){
                     echo '<tr>';
                         
@@ -37,8 +47,15 @@
                         echo '</tr>';     
                     }
                 ?>
-            
         </table>
+    </div>
+
+    <div>
+        <form action="index.php" method="POST">
+        Update Row: <input type="text" name="row">
+        Update Columns: <input type="text" name="col">
+        <input type="submit">
+        </form>
     </div>
 
 
