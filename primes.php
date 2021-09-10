@@ -9,7 +9,11 @@
     }
 
     function isPrime($i)
-    {
+    { /**
+        * function to iterate over every number smaller than $i 
+        * to determine if this is divisible by more than itself and one
+        * to return a 0 if not prime, 1 if prime.
+         */
         for($n = 2; $n < $i; $n++){
             if ($i % $n == 0){
                 return 0;
