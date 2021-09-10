@@ -11,12 +11,6 @@
 </head>
 <body>
 
-<h1>Maths support for students!</h1>
-
-<a href="squares.php">Square values</a>
-
-<a href="primes.php">Prime values</a>
-
     
 
     <!-- Boostrap JS -->
